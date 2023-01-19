@@ -2,17 +2,25 @@
 
 ➨ 🔗Web Preview: [clique aqui!](https://ricardokanashiro.github.io/RatingCard-Challenge/)
 
-<img width="70%" src="./design/desktop-design.jpg" />
+<img width="50%" src="./design/desktop-design.jpg" />
 
 ## Functions ⚙️:
 
-### ● Rating Function:
+### ● Open Back-this-project Modal Function:
 
-<img width="70%" src="./readmeSrc/RatingFunction.gif">
+<img width="70%" src="./readmeSrc/Modal.gif">
+
+### ● Send Amount Function:
+
+<img width="70%" src="./readmeSrc/Send-Amount.gif">
+
+### ● Bookmark Project Function:
+
+<img width="70%" src="./readmeSrc/Bookmark.gif">
 
 ## Responsivity 📱:
 
-<img width="70%" src="./readmeSrc/ResponsiveDemonstration.gif">
+<img width="70%" src="./readmeSrc/Responsivity.gif">
 
 ## Used Techs 💾:
 
