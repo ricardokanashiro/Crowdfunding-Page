@@ -22,8 +22,8 @@
 </div>
 
 <div>
-    ➦ <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="15px"/>
-    CSS
+    ➦ <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" height="15px"/>
+    Scss
 </div>
 
 <div>
