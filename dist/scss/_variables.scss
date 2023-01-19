@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+
+$primaryModerateCyan: hsl(176, 50%, 47%);
+$primaryDarkCyan: hsl(176, 72%, 28%);
+
+$neutralBlack: hsl(0, 0%, 0%);
+$neutralWhite: hsl(0, 0%, 100%);
+$neutralDarkGray: hsl(0, 0%, 48%);
+$neutralLightGray: rgba(166, 166, 166, 0.15);
+
+$mainFont: 'Commissioner', sans-serif;
+
+$fontWeights: (
+    "regular": 400,
+    "medium": 500,
+    "bold": 700,
+);

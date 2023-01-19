@@ -1,0 +1,681 @@
+@import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: "Commissioner", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+input, button {
+  font-family: "Commissioner", sans-serif;
+}
+
+input:focus {
+  outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+          appearance: textfield;
+}
+
+button {
+  cursor: pointer;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-width: 32rem;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+#menu-blur {
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: none;
+}
+
+.menu-blur-active {
+  display: block !important;
+}
+
+header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-image: url("../images/image-hero-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  width: 100%;
+  height: 37vh;
+}
+@media (min-width: 600px) {
+  header {
+    background-image: url("../images/image-hero-desktop.jpg");
+  }
+}
+header #header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  padding-top: 1.5rem;
+}
+header .hamburguer-menu-button {
+  visibility: visible;
+  cursor: pointer;
+}
+@media (min-width: 600px) {
+  header .hamburguer-menu-button {
+    display: none;
+  }
+}
+header .hamburguer-menu-button-active {
+  visibility: hidden;
+}
+header #header-menu {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  display: none;
+  z-index: 2;
+}
+@media (min-width: 600px) {
+  header #header-menu {
+    width: auto;
+    display: block;
+    position: static;
+  }
+  header #header-menu-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent !important;
+  }
+  header #header-menu .header-menu-list-item {
+    border: none !important;
+  }
+  header #header-menu .header-menu-list-item a {
+    color: hsl(0deg, 0%, 100%) !important;
+    font-weight: 500 !important;
+  }
+  header #header-menu #close-menu-btn-wrapper {
+    display: none !important;
+  }
+}
+header #header-menu #close-menu-btn-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 90%;
+  height: 5.5rem;
+  background-color: transparent;
+}
+header #header-menu #close-menu-btn-wrapper #close-menu-btn {
+  display: block;
+  cursor: pointer;
+}
+header #header-menu-list {
+  list-style: none;
+  background-color: hsl(0deg, 0%, 100%);
+  width: 90%;
+  border-radius: 0.7rem;
+}
+header #header-menu-list .header-menu-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 6rem;
+  border-bottom: 1px solid rgba(166, 166, 166, 0.15);
+  padding: 0 2rem;
+}
+header #header-menu-list .header-menu-list-item a {
+  font-size: clamp(1.4rem, 2vw, 1.7rem);
+  color: hsl(0deg, 0%, 0%);
+  font-weight: 700;
+  white-space: nowrap;
+  display: block;
+}
+header .header-menu-active {
+  display: block !important;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+main #main-content-wrapper {
+  width: min(90%, 70rem);
+  background-color: hsl(0deg, 0%, 100%);
+  position: relative;
+  bottom: 4.5rem;
+  border-radius: 0.5rem;
+}
+main #main-content-wrapper .project-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  width: 100%;
+  padding: 0 2rem;
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+main #main-content-wrapper .project-card .project-logo-img {
+  width: 5rem;
+  display: block;
+  position: relative;
+  bottom: 2.5rem;
+}
+main #main-content-wrapper .project-card-content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-flow: column nowrap;
+}
+main #main-content-wrapper .project-card-content-wrapper .project-title {
+  font-size: clamp(1.8rem, 2vw, 2.1rem);
+  width: 80%;
+  display: block;
+  text-align: center;
+  font-weight: getFontWeights(bold);
+}
+main #main-content-wrapper .project-card-content-wrapper .project-description {
+  color: hsl(0deg, 0%, 48%);
+  font-size: clamp(1.1rem, 1.7vw, 1.35rem);
+  text-align: center;
+  font-weight: 500;
+  display: block;
+  margin-top: 2rem;
+}
+main #main-content-wrapper .project-card-content-wrapper .project-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4.5rem;
+  width: 100%;
+  margin: 2rem 0;
+  padding: 0 1.2rem;
+}
+main #main-content-wrapper .project-card-content-wrapper .project-options .back-project-btn {
+  background-color: hsl(176deg, 50%, 47%);
+  color: hsl(0deg, 0%, 100%);
+  font-weight: 700;
+  height: 100%;
+  padding: 1.5rem 3.5rem;
+  border-radius: 2.7rem;
+}
+main #main-content-wrapper .project-card-content-wrapper .project-options .bookmark-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: transparent;
+}
+main #main-content-wrapper .project-card-content-wrapper .project-options .bookmark-btn .icon-bookmark-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.5rem;
+  height: 100%;
+  z-index: 1;
+  background-color: hsl(0deg, 0%, 0%);
+  border-radius: 50%;
+}
+main #main-content-wrapper .project-card-content-wrapper .project-options .bookmark-btn .icon-bookmark-wrapper #icon-bookmark-img {
+  width: 1.8rem;
+  fill: rgb(219, 219, 219);
+  margin-left: -1px;
+}
+main #main-content-wrapper .project-card-content-wrapper .project-options .bookmark-btn .bookmark-card {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 0;
+  height: 100%;
+  background-color: rgba(166, 166, 166, 0.15);
+  overflow: hidden;
+  position: relative;
+  left: -3.5rem;
+  border-radius: 2rem;
+  padding: 0 1.8rem 0 0;
+  font-weight: 700;
+  color: hsl(0deg, 0%, 48%);
+  display: none;
+  transition-duration: 600ms;
+  transition-property: width;
+  transition-timing-function: ease-out;
+}
+@media (min-width: 600px) {
+  main #main-content-wrapper .project-card-content-wrapper .project-options .bookmark-btn .bookmark-card {
+    display: flex;
+  }
+}
+main #main-content-wrapper .project-card-content-wrapper .project-options .bookmark-btn:hover #icon-bookmark-img {
+  fill: hsl(176deg, 50%, 47%);
+}
+main #main-content-wrapper .project-card-content-wrapper .project-options .bookmark-btn-active .icon-bookmark-wrapper {
+  background-color: hsl(176deg, 72%, 28%);
+}
+main #main-content-wrapper .project-card-content-wrapper .project-options .bookmark-btn-active .bookmark-card {
+  color: hsl(176deg, 72%, 28%);
+  width: 14rem;
+}
+main #main-content-wrapper .project-card-content-wrapper .project-options .bookmark-btn-active #icon-bookmark-img {
+  fill: hsl(0deg, 0%, 100%) !important;
+}
+main #main-content-wrapper .rewards-card-titles-wrapper {
+  width: 100%;
+}
+@media (min-width: 600px) {
+  main #main-content-wrapper .rewards-card-titles-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+  main #main-content-wrapper .rewards-card-titles-wrapper h4 {
+    margin: 0;
+  }
+}
+main #main-content-wrapper .project-card + .project-card {
+  margin-top: 2rem;
+}
+main #main-content-wrapper #project-card-statistics {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+}
+main #main-content-wrapper #project-card-statistics #project-card-statistics-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+@media (min-width: 600px) {
+  main #main-content-wrapper #project-card-statistics #project-card-statistics-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+  }
+}
+main #main-content-wrapper #project-card-statistics .project-card-statistic-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  position: relative;
+  width: 100%;
+  height: 8rem;
+  margin-top: 2rem;
+  position: relative;
+}
+main #main-content-wrapper #project-card-statistics .project-card-statistic-item .statistic-card-item-value {
+  font-size: 2.6rem;
+  font-weight: 700;
+}
+main #main-content-wrapper #project-card-statistics .project-card-statistic-item .statistic-card-item-description {
+  color: hsl(0deg, 0%, 48%);
+  font-size: clamp(1.1rem, 1.7vw, 1.35rem);
+  margin-top: 0.7rem;
+}
+main #main-content-wrapper #project-card-statistics .project-card-statistic-item:nth-child(3) {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+@media (min-width: 600px) {
+  main #main-content-wrapper #project-card-statistics .project-card-statistic-item:nth-child(3) {
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
+}
+main #main-content-wrapper #project-card-statistics .project-card-statistic-divider {
+  width: 40%;
+  height: 1px;
+  background-color: rgba(166, 166, 166, 0.15);
+  margin-top: 2rem;
+}
+@media (min-width: 600px) {
+  main #main-content-wrapper #project-card-statistics .project-card-statistic-divider {
+    position: absolute;
+    right: 0;
+    width: 1px;
+    height: 60%;
+  }
+}
+main #main-content-wrapper #project-card-statistics .statistic-card-item-days-left-bar-total {
+  background-color: rgba(166, 166, 166, 0.15);
+  width: 100%;
+  height: 1.2rem;
+  margin: 0.5rem 0 3rem 0;
+  border-radius: 1rem;
+}
+main #main-content-wrapper #project-card-statistics .statistic-card-item-days-left-bar-total .statistic-card-item-days-left-bar-progress {
+  width: 75%;
+  height: 100%;
+  border-radius: 1rem;
+  background-color: hsl(176deg, 50%, 47%);
+}
+main #main-content-wrapper #about-this-project .about-this-project-title {
+  text-align: left;
+  font-size: 1.7rem;
+  font-weight: 700;
+  width: 100%;
+  margin-top: 3rem;
+}
+main #main-content-wrapper #about-this-project .about-this-project-description {
+  color: hsl(0deg, 0%, 48%);
+  font-size: clamp(1.1rem, 1.7vw, 1.35rem);
+  margin-top: 1.7rem;
+  line-height: 2rem;
+  width: 100%;
+}
+main #main-content-wrapper #about-this-project .about-this-project-description + .about-this-project-description {
+  margin-bottom: 1.7rem;
+}
+main #main-content-wrapper #about-this-project .collect-reward-btn {
+  display: block;
+  padding: 1.3rem 2.7rem;
+  background-color: hsl(176deg, 50%, 47%);
+  color: hsl(0deg, 0%, 100%);
+  border-radius: 2.4rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+@media (min-width: 600px) {
+  main #main-content-wrapper #about-this-project .collect-reward-btn {
+    width: 18rem;
+  }
+}
+
+.rewards-card-wrapper {
+  width: 100%;
+}
+.rewards-card-wrapper .rewards-card {
+  border: 2px solid rgba(166, 166, 166, 0.15);
+  margin-bottom: 1.7rem;
+  padding: 1.5rem;
+  width: 100%;
+  border-radius: 1rem;
+}
+.rewards-card-wrapper .rewards-card .reward-card-title, .rewards-card-wrapper .rewards-card .reward-card-price {
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
+}
+.rewards-card-wrapper .rewards-card .reward-card-title {
+  margin-top: 0.4rem;
+}
+.rewards-card-wrapper .rewards-card .reward-card-price {
+  color: hsl(176deg, 50%, 47%);
+  margin-top: 0.4rem;
+  margin-bottom: 1.2rem;
+}
+.rewards-card-wrapper .rewards-card .reward-card-description {
+  color: hsl(0deg, 0%, 48%);
+  font-size: clamp(1.1rem, 1.7vw, 1.35rem);
+  line-height: 2rem;
+  margin-bottom: 1.8rem;
+}
+.rewards-card-wrapper .rewards-card .rewards-items-left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  width: 100%;
+  margin: 0 0 1.8rem 0;
+}
+@media (min-width: 600px) {
+  .rewards-card-wrapper .rewards-card .rewards-items-left {
+    margin: 0;
+  }
+}
+.rewards-card-wrapper .rewards-card .rewards-items-left .rewards-item-left-amount {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+.rewards-card-wrapper .rewards-card .rewards-items-left .rewards-item-left-text {
+  color: neutralDarkGray;
+  font-weight: 500;
+}
+.rewards-card-wrapper .rewards-card .rewards-item-action-area {
+  width: 100%;
+}
+@media (min-width: 600px) {
+  .rewards-card-wrapper .rewards-card .rewards-item-action-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.rewards-card-wrapper .rewards-card-inactive {
+  opacity: 0.5;
+  cursor: auto !important;
+}
+.rewards-card-wrapper .rewards-card-inactive button {
+  background-color: hsl(0deg, 0%, 48%) !important;
+  cursor: auto !important;
+}
+
+#back-this-project-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: 10rem;
+  z-index: 4;
+  display: none;
+  width: 100%;
+  border-radius: 1rem;
+}
+#back-this-project-modal #rewards-card-modal-wrapper {
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 1rem;
+  width: min(90%, 65rem);
+  padding: 2rem;
+  position: relative;
+}
+@media (min-width: 600px) {
+  #back-this-project-modal #rewards-card-modal-wrapper {
+    padding: 4rem;
+  }
+}
+#back-this-project-modal #rewards-card-modal-wrapper .rewards-card {
+  cursor: pointer;
+}
+#back-this-project-modal #rewards-card-modal-wrapper h3 {
+  font-size: 1.6rem;
+  margin: 1rem 0 2rem 0;
+}
+#back-this-project-modal #rewards-card-modal-wrapper img {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 1.3rem;
+  cursor: pointer;
+}
+#back-this-project-modal #rewards-card-modal-wrapper p {
+  color: hsl(0deg, 0%, 48%);
+  font-size: clamp(1.1rem, 1.7vw, 1.35rem);
+  margin-bottom: 2rem;
+  line-height: 2rem;
+}
+#back-this-project-modal #rewards-card-modal-wrapper .rewards-card-active {
+  border: 2px solid hsl(176deg, 50%, 47%);
+}
+#back-this-project-modal #rewards-card-modal-wrapper .reward-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+#back-this-project-modal #rewards-card-modal-wrapper .product-card-title-wrapper {
+  height: auto;
+}
+#back-this-project-modal #rewards-card-modal-wrapper .reward-card-select-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+#back-this-project-modal #rewards-card-modal-wrapper .reward-card-select-btn-selected {
+  width: 60%;
+  height: 60%;
+  background-color: hsl(176deg, 50%, 47%);
+  -webkit-clip-path: circle();
+          clip-path: circle();
+  visibility: hidden;
+}
+#back-this-project-modal #rewards-card-modal-wrapper .reward-card-select-btn-selected-active {
+  visibility: visible;
+}
+#back-this-project-modal #rewards-card-modal-wrapper .reward-card-title {
+  margin: 0;
+}
+#back-this-project-modal #rewards-card-modal-wrapper .reward-card-price {
+  margin: 0.4rem 0 0 0;
+}
+#back-this-project-modal .rewards-card-modal-wrapper-inactive {
+  display: none !important;
+}
+
+.reward-card-input-value-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  display: none;
+  width: 100%;
+}
+.reward-card-input-value-area span {
+  display: block;
+  font-weight: 500;
+  color: hsl(0deg, 0%, 48%);
+  font-size: 1.2rem;
+  margin: 2rem 0;
+}
+.reward-card-input-value-area .modal-reward-divider {
+  background-color: rgba(166, 166, 166, 0.15);
+  height: 1px;
+  width: calc(100% + 3rem);
+}
+.reward-card-input-value-area .reward-card-input-value-action-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row nowrap;
+  gap: 5%;
+  width: 100%;
+  height: 4.2rem;
+}
+.reward-card-input-value-area .modal-reward-card-pledge-value-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row nowrap;
+  gap: 0.5rem;
+  border: 1px solid rgba(166, 166, 166, 0.15);
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  width: 40%;
+  height: 100%;
+}
+.reward-card-input-value-area .modal-reward-card-pledge-value-input input {
+  width: 100%;
+  font-weight: 700;
+  text-align: center;
+}
+.reward-card-input-value-area .modal-reward-card-pledge-value-input span {
+  margin: 0;
+}
+.reward-card-input-value-area .modal-reward-card-pledge-button {
+  width: 55%;
+  height: 100%;
+  background-color: hsl(176deg, 50%, 47%);
+  color: hsl(0deg, 0%, 100%);
+  font-weight: 700;
+  border-radius: 2rem;
+}
+
+#rewards-modal-completed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  display: none;
+  background-color: hsl(0deg, 0%, 100%);
+  width: min(90%, 50rem);
+  border-radius: 1rem;
+  padding: 2rem;
+}
+#rewards-modal-completed img {
+  margin: 3rem 0 2rem 0;
+}
+#rewards-modal-completed h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+#rewards-modal-completed p {
+  color: hsl(0deg, 0%, 48%);
+  font-size: clamp(1.1rem, 1.7vw, 1.35rem);
+  text-align: center;
+  line-height: 2rem;
+  font-size: 1.2rem;
+}
+#rewards-modal-completed button {
+  background-color: hsl(176deg, 50%, 47%);
+  color: hsl(0deg, 0%, 100%);
+  font-weight: 700;
+  font-size: 1.3rem;
+  padding: 1.5rem 3rem;
+  border-radius: 3rem;
+  margin: 3rem 0;
+}
+
+.reward-card-input-value-area-active {
+  display: flex !important;
+}
+
+.back-this-project-modal-active {
+  display: flex !important;
+}
+
+.rewards-modal-completed-active {
+  display: flex !important;
+}/*# sourceMappingURL=main.css.map */

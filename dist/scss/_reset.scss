@@ -1,0 +1,33 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: $mainFont;
+}
+
+a {
+    text-decoration: none;
+}
+
+input, button {
+    font-family: $mainFont;
+}
+
+input:focus {
+    outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+
+}
+
+button {
+    cursor: pointer;
+}
