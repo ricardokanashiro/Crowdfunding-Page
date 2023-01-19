@@ -1,0 +1,801 @@
+@import "variables";
+@import "functions.scss";
+@import "reset";
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    min-width: 32rem;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+#menu-blur {
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: none;
+}
+
+.menu-blur-active {
+    display: block !important;
+}
+
+// Header
+
+header {
+    @include flexCenter(center, flex-start);
+
+    background-image: url('../images/image-hero-mobile.jpg');   
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+
+    width: 100%;
+    height: 37vh;
+
+    @include tablet-landscape-up {
+        background-image: url('../images/image-hero-desktop.jpg');
+    }
+
+    #header-content {
+        @include flexCenter(space-between, center);
+
+        width: 90%;
+        padding-top: 1.5rem;
+    }
+
+    .hamburguer-menu-button {
+        visibility: visible;
+        cursor: pointer;
+
+        @include tablet-landscape-up {
+            display: none;
+        }
+    }
+
+    .hamburguer-menu-button-active {
+        visibility: hidden;
+    }
+
+    #header-menu {
+        width: 100%;
+
+        position: absolute;
+        top: 0;
+
+        display: none;
+
+        z-index: 2;
+
+        @include tablet-landscape-up {
+
+            width: auto;
+
+            display: block;
+            position: static;
+
+            &-list {
+                @include flexCenter(space-between, center);
+
+                background-color: transparent !important;
+            }
+
+            .header-menu-list-item {
+                border: none !important;
+            }
+
+            .header-menu-list-item a{
+                color: $neutralWhite !important;
+                font-weight: getFontWeight(medium) !important;
+            }
+
+            #close-menu-btn-wrapper{
+                display: none !important;
+            }
+        }
+
+        #close-menu-btn-wrapper {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            
+            width: 90%;
+            height: 5.5rem;
+            
+            background-color: transparent;
+
+            #close-menu-btn {
+                display: block;
+                cursor: pointer;
+            }
+        }
+
+        &-list {
+            list-style: none;
+    
+            background-color: $neutralWhite;
+    
+            width: 90%;
+
+            border-radius: .7rem;
+
+            .header-menu-list-item {
+                @include flexCenter(flex-start, center);
+
+                width: 100%;
+                height: 6rem;
+
+                border-bottom: 1px solid $neutralLightGray;
+                padding: 0 2rem;
+            }
+    
+            .header-menu-list-item a{
+
+                @include responsive-font-style(1.4rem, 1.7rem);
+
+                color: $neutralBlack;
+                font-weight: getFontWeight(bold);
+
+                white-space: nowrap;
+
+                display: block;
+            }
+        }
+    }
+
+    .header-menu-active {
+        display: block !important;
+    }
+}
+
+// Main
+
+main {
+
+    @include flexCenter(center, center);
+
+    width: 100%;
+
+    #main-content-wrapper {
+
+        width: min(90%, 70rem);
+
+        background-color: $neutralWhite;
+
+        position: relative;
+        bottom: 4.5rem;
+
+        border-radius: .5rem;
+
+        .project-card {
+            
+            @include flexCenter(center, center);
+
+            flex-flow: column nowrap;
+
+            width: 100%;
+
+            padding: 0 2rem;
+            box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
+            border-radius: .5rem;
+
+            .project-logo-img {
+                width: 5rem;
+
+                display: block;
+
+                position: relative;
+                bottom: 2.5rem;
+            }
+
+            &-content-wrapper {
+                @include flexCenter(center, center);
+
+                width: 100%;
+
+                flex-flow: column nowrap;
+    
+                .project-title {
+
+                    @include responsive-font-style(1.8rem, 2.1rem);
+
+                    width: 80%;
+
+                    display: block;
+
+                    text-align: center;
+                    font-weight: getFontWeights(bold);
+                }
+
+                .project-description {
+                    @include paragraphStyle();
+
+                    text-align: center;
+                    font-weight: getFontWeight(medium);
+
+                    display: block;                    
+
+                    margin-top: 2rem;
+                }
+
+                .project-options {
+
+                    @include flexCenter(space-between, center);
+
+                    height: 4.5rem;
+                    width: 100%;
+                    margin: 2rem 0;
+                    padding: 0 1.2rem;
+
+                    .back-project-btn {
+                        background-color: hsl(176, 50%, 47%);
+
+                        color: $neutralWhite;
+                        font-weight: getFontWeight(bold);
+
+                        height: 100%;
+                        padding: 1.5rem 3.5rem;
+                        border-radius: 2.7rem;
+                    }
+
+                    .bookmark-btn {
+
+                        @include flexCenter(center, center);
+
+                        height: 100%;
+
+                        background-color: transparent;
+
+                        .icon-bookmark-wrapper {
+    
+                            @include flexCenter(center, center);
+            
+                            width: 4.5rem;
+                            height: 100%;
+
+                            z-index: 1;
+            
+                            background-color: $neutralBlack;
+                            border-radius: 50%;
+            
+                            #icon-bookmark-img {
+                                width: 1.8rem;
+                                fill: rgb(219, 219, 219);
+                                margin-left: -1px;
+                            }
+                        }
+
+                        .bookmark-card {
+
+                            @include flexCenter(flex-end, center);
+
+                            @include tablet-landscape-up {
+                                display: flex;
+                            }
+
+                            width: 0;
+                            height: 100%;
+                            background-color: $neutralLightGray;
+
+                            overflow: hidden;
+
+                            position: relative;
+                            left: -3.5rem;
+
+                            border-radius: 2rem;
+                            // padding: 0 2rem 0 4.5rem;
+                            padding: 0 1.8rem 0 0;
+
+                            font-weight: getFontWeight(bold);
+                            color: $neutralDarkGray;
+
+                            display: none;
+                            transition-duration: 600ms;
+                            transition-property: width;
+                            transition-timing-function: ease-out;
+                        }
+
+                        &:hover #icon-bookmark-img{
+                            fill: $primaryModerateCyan;
+                        }
+                    }
+
+                    .bookmark-btn-active {
+
+                        .icon-bookmark-wrapper {
+                            background-color: $primaryDarkCyan;
+                        }
+
+                        .bookmark-card {
+                            color: $primaryDarkCyan;
+                            width: 14rem;
+                        }
+
+                        #icon-bookmark-img{
+                            fill: $neutralWhite !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        .rewards-card-titles-wrapper {
+            width: 100%;
+
+            @include tablet-landscape-up {
+                @include flexCenter(space-between, center);
+
+                h4 {
+                    margin: 0;
+                }
+
+                margin-bottom: 2rem;
+            }
+        }
+
+        .project-card + .project-card {
+            margin-top: 2rem;
+        }
+
+        #project-card-statistics {
+            @include flexCenter(center, center);
+                flex-flow: column nowrap;
+
+            #project-card-statistics-wrapper {
+                @include flexCenter(center, center);
+                flex-flow: column nowrap;
+
+                @include tablet-landscape-up {
+                    @include flexCenter(center, center);
+                    flex-flow: row nowrap;
+                }
+
+                width: 100%;
+
+                margin-bottom: 2rem;
+            }
+
+            .project-card-statistic-item {
+
+                @include flexCenter(center, center);
+                flex-flow: column nowrap;
+
+                position: relative;
+
+                width: 100%;
+                height: 8rem;
+
+                margin-top: 2rem;
+
+                position: relative;
+
+                .statistic-card-item-value {
+                    font-size: 2.6rem;
+                    font-weight: getFontWeight(bold);
+                }
+
+                .statistic-card-item-description {
+                    @include paragraphStyle();
+
+                    margin-top: .7rem;
+                }
+            }
+
+            .project-card-statistic-item:nth-child(3) {
+
+                margin-top: 0;
+                margin-bottom: .5rem;
+
+                @include tablet-landscape-up {
+                    margin-top: 2rem;
+                    margin-bottom: 0;
+                }
+            }
+
+            .project-card-statistic-divider {
+
+                @include tablet-landscape-up {
+                    position: absolute;
+                    right: 0;
+
+                    width: 1px;
+                    height: 60%;
+                }
+
+                width: 40%;
+                height: 1px;
+                background-color: $neutralLightGray;
+                margin-top: 2rem;
+            }
+
+            .statistic-card-item-days-left-bar-total {
+                background-color: $neutralLightGray;
+
+                width: 100%;
+                height: 1.2rem;
+
+                margin: .5rem 0 3rem 0;
+
+                border-radius: 1rem;
+
+                .statistic-card-item-days-left-bar-progress {
+                    width: 75%;
+                    height: 100%;
+
+                    border-radius: 1rem;
+
+                    background-color: $primaryModerateCyan;
+                }
+            }
+        }
+
+        #about-this-project {
+
+            .about-this-project-title {
+                text-align: left;
+                font-size: 1.7rem;
+                font-weight: getFontWeight(bold);
+
+                width: 100%;
+                margin-top: 3rem;
+            }
+
+            .about-this-project-description {
+                @include paragraphStyle();
+
+                margin-top: 1.7rem;
+
+                line-height: 2rem;
+
+                width: 100%;
+            }
+
+            .about-this-project-description + .about-this-project-description {
+                margin-bottom: 1.7rem;
+            }
+    
+            .collect-reward-btn {
+                display: block;
+                padding: 1.3rem 2.7rem;
+                background-color: $primaryModerateCyan;
+                color: $neutralWhite;
+                border-radius: 2.4rem;
+                font-size: 1.2rem;
+                font-weight: getFontWeight(bold);
+
+                @include tablet-landscape-up{
+                    width: 18rem;
+                }
+            }
+        }
+    }
+}
+
+.rewards-card-wrapper {
+
+    width: 100%;
+
+    .rewards-card {
+        border: 2px solid $neutralLightGray;
+        margin-bottom: 1.7rem;
+        padding: 1.5rem;
+
+        width: 100%;
+
+        border-radius: 1rem;
+
+        .reward-card-title, .reward-card-price {
+            @include responsive-font-style(1.2rem, 1.4rem);
+        }
+
+        .reward-card-title {
+            margin-top: .4rem;
+        }
+
+        .reward-card-price {
+            color: $primaryModerateCyan;
+            margin-top: .4rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .reward-card-description {
+            @include paragraphStyle();
+
+            line-height: 2rem;
+            
+            margin-bottom: 1.8rem;
+        }
+
+        .rewards-items-left {
+            @include flexCenter(flex-start, center);
+            gap: .5rem;
+
+            width: 100%;
+
+            margin: 0 0 1.8rem 0;
+
+            @include tablet-landscape-up {
+                margin: 0;
+            }
+
+            .rewards-item-left-amount {
+                font-size: 2.4rem;
+                font-weight: getFontWeight(bold);
+            }
+
+            .rewards-item-left-text {
+                color: neutralDarkGray;
+                font-weight: getFontWeight(medium);
+            }
+        }
+
+        .rewards-item-action-area {
+            width: 100%;
+
+            @include tablet-landscape-up {
+                @include flexCenter(space-between, center);
+            }
+        }
+    }
+
+    .rewards-card-inactive {
+        opacity: 0.5;
+
+        cursor: auto !important;
+
+        button {
+            background-color: $neutralDarkGray !important;
+
+            cursor: auto !important;
+        }
+    }
+}
+
+#back-this-project-modal {
+
+    @include flexCenter(center, center);
+    flex-direction: column;
+
+    position: absolute;
+    top: 10rem;
+
+    z-index: 4;
+    display: none;
+
+    width: 100%;
+
+    border-radius: 1rem;
+
+    #rewards-card-modal-wrapper {
+
+        @include tablet-landscape-up {
+            padding: 4rem;
+        }
+
+        background-color: $neutralWhite;
+
+        border-radius: 1rem;
+        width: min(90%, 65rem);
+
+        padding: 2rem;
+
+        position: relative;
+        
+        .rewards-card {
+            cursor: pointer;
+        }
+
+        h3 {
+
+            font-size: 1.6rem;
+            margin: 1rem 0 2rem 0;
+        }
+
+        img {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+
+            width: 1.3rem;
+
+            cursor: pointer;
+        }
+
+        p {
+            @include paragraphStyle();
+
+            margin-bottom: 2rem;
+            line-height: 2rem;
+        }
+
+        .rewards-card-active {
+            border: 2px solid $primaryModerateCyan;
+        }
+
+        .reward-card-header {
+            @include flexCenter(flex-start, center);
+            gap: 1rem;
+
+            margin-bottom: 1rem;
+        }
+
+        .product-card-title-wrapper {
+            height: auto;
+        }
+
+        .reward-card-select-btn {
+
+            @include flexCenter(center, center);
+
+            border: 1px solid rgba(128, 128, 128, 0.3);
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+        }
+
+        .reward-card-select-btn-selected {
+            width: 60%;
+            height: 60%;
+            background-color: $primaryModerateCyan;
+            clip-path: circle();
+            visibility: hidden;
+        }
+
+        .reward-card-select-btn-selected-active {
+            visibility: visible;
+        }
+
+        .reward-card-title {
+            margin: 0;
+        }
+
+        .reward-card-price {
+            margin: .4rem 0 0 0;
+        }
+    }
+
+    .rewards-card-modal-wrapper-inactive {
+        display: none !important;
+    }
+}
+
+.reward-card-input-value-area {
+
+    @include flexCenter(center, center);
+    flex-flow: column nowrap;
+    display: none;
+
+    width: 100%;
+
+    span {
+        display: block;
+
+        font-weight: getFontWeight(medium);
+        color: $neutralDarkGray;
+        font-size: 1.2rem;
+
+        margin: 2rem 0;
+    }
+
+    .modal-reward-divider {
+        background-color: $neutralLightGray;
+        height: 1px;
+        width: calc(100% + 3rem);
+    }
+
+    .reward-card-input-value-action-area {
+
+        @include flexCenter(center, center);
+        flex-flow: row nowrap;
+        gap: 5%;
+
+        width: 100%;
+        height: 4.2rem;
+    }
+
+    .modal-reward-card-pledge-value-input {
+
+        @include flexCenter(center, center);
+        flex-flow: row nowrap;
+        gap: .5rem;
+
+        border: 1px solid $neutralLightGray;
+        padding: 1rem 2rem;
+        border-radius: 2rem;
+
+        width: 40%;
+        height: 100%;
+
+        input {
+            width: 100%;
+            font-weight: getFontWeight(bold);
+            text-align: center;
+        }
+
+        span {
+            margin: 0;
+        }
+    }
+
+    .modal-reward-card-pledge-button {
+        width: 55%;
+        height: 100%;
+
+        background-color: $primaryModerateCyan;
+        color: $neutralWhite;
+        font-weight: getFontWeight(bold);
+
+        border-radius: 2rem;
+    }
+}
+
+#rewards-modal-completed {
+
+    @include flexCenter(center, center);
+    flex-flow: column nowrap;
+
+    display: none;
+
+    background-color: $neutralWhite;
+    width: min(90%, 50rem);
+
+    border-radius: 1rem;
+
+    padding: 2rem;
+
+    img {
+        margin: 3rem 0 2rem 0;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        font-weight: getFontWeight(bold);
+        margin-bottom: 2rem;
+    }
+
+    p {
+        @include paragraphStyle();
+
+        text-align: center;
+        line-height: 2rem;
+        font-size: 1.2rem;
+    }
+
+    button {
+        background-color: $primaryModerateCyan;
+
+        color: $neutralWhite;
+        font-weight: getFontWeight(bold);
+        font-size: 1.3rem;
+
+        padding: 1.5rem 3rem;
+        border-radius: 3rem;
+        margin: 3rem 0;
+    }
+}
+
+// Active states
+
+.reward-card-input-value-area-active {
+    display: flex !important;
+}
+
+.back-this-project-modal-active {
+    display: flex !important;
+}
+
+.rewards-modal-completed-active {
+    display: flex !important;
+}

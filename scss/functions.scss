@@ -1,0 +1,24 @@
+@mixin flexCenter($justifyContentValue, $alignItemsValue) {
+    display: flex;
+    align-items: $alignItemsValue;
+    justify-content: $justifyContentValue;
+}
+
+@mixin paragraphStyle() {
+    color: $neutralDarkGray;
+    font-size: clamp(1.1rem, 1.7vw, 1.35rem);
+}
+
+@function getFontWeight($weightName) {
+    @return map-get($fontWeights, $weightName);
+}
+
+// Responsive styles
+
+@mixin tablet-landscape-up {
+    @media(min-width: 600px) { @content }
+}
+
+@mixin responsive-font-style($fontSizeMin, $fontSizeMax) {
+    font-size: clamp($fontSizeMin, 2vw, $fontSizeMax)
+}
