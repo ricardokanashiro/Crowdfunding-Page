@@ -1,6 +1,6 @@
 # Front End Challenge - Interative Rating Card
 
-➨ 🔗Web Preview: [clique aqui!](https://ricardokanashiro.github.io/RatingCard-Challenge/)
+➨ 🔗Web Preview: [clique aqui!](https://ricardokanashiro.github.io/Crowdfunding-Page/)
 
 <img width="50%" src="./design/desktop-design.jpg" />
 
